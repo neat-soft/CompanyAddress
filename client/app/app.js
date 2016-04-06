@@ -13,12 +13,13 @@ var myApp = angular.module('CompanyApp', [
   'updateMeta',
   'toastr'
 ])
-  .config(function ($routeProvider, $locationProvider, $httpProvider) {
-    $routeProvider
+  .config(function ($urlRouterProvider, $stateProvider,$routeProvider, $locationProvider, $httpProvider) {
+    /*$routeProvider
       .otherwise({
         redirectTo: '/list'
-      });
-      //.otherwise('/list');
+      });*/
+    $urlRouterProvider
+      .otherwise('/list');  
     $locationProvider.html5Mode(true);
     //$httpProvider.useApplyAsync(true);
   });

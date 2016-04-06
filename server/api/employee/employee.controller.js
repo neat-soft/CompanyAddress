@@ -83,9 +83,9 @@ exports.deleteEmployee = function(req, res){
 		var employee = storage.getItem(keys[i]);
 		if ((employee !== undefined) && (employee !== null))
 		{
-			if (employee['id'] === selectedEmployeeId){
+			if (employee['id'] == selectedEmployeeId){
 		  	  storage.removeItemSync(keys[i]);
-		  	break;
+		  	  break;
 		  	}
 		}
 	}

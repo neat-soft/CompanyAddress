@@ -1,6 +1,6 @@
 <div ng_include='"components/navbar/navbar.html"'> </div>
 <div class="container ng-scope">
-  <div class="col-sm-8">
+  <div class="col-sm-8" ng-controller="ViewCtrl as viewCtrl">
     <h2>View Employee</h2>
     <br>
     <br>
@@ -14,11 +14,11 @@
           <th>Company</th>
           </tr>
           <tr>
-            <td>{{currentEmployee.id}}</td>
-            <td>{{currentEmployee.first_name}}</td>
-            <td>{{currentEmployee.last_name}}</td>
-            <td>{{currentEmployee.email}}</td>
-            <td>{{currentEmployee.company}}</td>
+            <td>{{viewCtrl.currentEmployee.id}}</td>
+            <td>{{viewCtrl.currentEmployee.first_name}}</td>
+            <td>{{viewCtrl.currentEmployee.last_name}}</td>
+            <td>{{viewCtrl.currentEmployee.email}}</td>
+            <td>{{viewCtrl.currentEmployee.company}}</td>
           </tr>
         </tbody>
       </table>

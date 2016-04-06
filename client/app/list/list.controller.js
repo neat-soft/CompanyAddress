@@ -1,44 +1,29 @@
 'use strict';
 
 angular.module('CompanyApp')
-  .controller('ListCtrl', function ($scope,toastr, $http,$location,employeeHelper) {
-	console.log("In EditController");
-    $scope.employees=[];
-    $scope.no = 0;
-
+  .controller('ListCtrl', function ($scope,toastr, $http,$location,employeeHelper,employeeService) {
+    var vthis = this;
+    vthis.employees = [];
     /* Init Employees if app starts first time */
     if (employeeHelper.getInitFlag() == false)
     {
       employeeHelper.setInitFlag(true);
-      $http.get('/api/employee/getInitEmployee')
+      employeeService.getInit()
       .success(function(employees){
-        if (employees.length >0)
-          {
-            for (var indexOfEmployee = employees.length-1; indexOfEmployee >= 0;indexOfEmployee--){
-              if (employees[indexOfEmployee] != undefined && employees[indexOfEmployee] != null)
-              {
-                
-                $scope.employees.push(employees[indexOfEmployee]);
-              }
-            }
-          }
+        if (employees.length >0){
+            vthis.employees = employees.reverse();
+        }
       }).error(function(err){
         toastr.error("Error: Server not found data.");
       });    
     }
     /* Get Employees from Server */
     else {
-      $http.get('/api/employee/getEmployee')
+      employeeService.get()
         .success(function(employees){
-          if (employees.length >0)
-            {
-              for (var indexOfEmployee = employees.length-1; indexOfEmployee >= 0;indexOfEmployee--){
-                if (employees[indexOfEmployee] != undefined && employees[indexOfEmployee] != null)
-                {
-                  $scope.employees.push(employees[indexOfEmployee]);
-                }
-              }
-            }
+          if (employees.length >0){
+              vthis.employees = employees.reverse();
+          }
         }).error(function(err){
         	toastr.error("Error: Server not found data.");
         });
@@ -55,17 +40,12 @@ angular.module('CompanyApp')
     };
     /* Delete Function*/
     $scope.deleteEmployee = function(employee,index){
-      
-      $http.delete('/api/employee/'+employee.id) // + '&param='+value
+      //$http.delete('/api/employee/'+employee.id) // + '&param='+value
+      employeeService.remove(employee.id)   // + '&param='+value
         .success(function(employees){
-          //$scope.employees.splice(index,1);
-          $scope.employees = [];
-         if (employees.length >0)
-          {
-            for (var indexOfEmployee = employees.length-1; indexOfEmployee >= 0;indexOfEmployee--){
-              if (employees[indexOfEmployee] != undefined && employees[indexOfEmployee] != null)
-              $scope.employees.push(employees[indexOfEmployee]);
-            }
+          vthis.employees = [];
+          if (employees.length >0){
+            vthis.employees = employees.reverse();
           }
           employeeHelper.setCurrentEmployee(undefined);
           toastr.success("Removed from server.");

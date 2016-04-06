@@ -5,7 +5,7 @@
       <h2>List Employees</h2>
       <br>
       <br>
-      <div class="limit-overflow">
+      <div class="limit-overflow" ng-controller="ListCtrl as listCtrl">
         <table class ="table">
           <tbody>
             <tr>
@@ -15,7 +15,8 @@
           	<th>Email</th>
             <th>Company</th>
             </tr>
-            <tr ng-repeat="employee in employees track by $index" class="ng-scope">
+            <tr ng-repeat="employee in listCtrl.employees track by $index" class="ng-scope">
+              
               <td>{{$index+1}}</td>
               <td>{{employee.first_name}}</td>
               <td>{{employee.last_name}}</td>
