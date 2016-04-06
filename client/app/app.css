@@ -26,7 +26,10 @@ div.container.ng-scope{
     color: #fff;
     background-color: #428bca;
 }
-
+.limit-overflow{
+  max-height: 30em;
+  overflow-y: scroll;
+}
 a.navbar-brand{
   margin-bottom:0px !important;
   padding:0px;

@@ -18,9 +18,8 @@ exports.addEmployee = function(req,res){
 	var createEmployee = function(){
 		var id = crypto.randomBytes(10).toString('hex');
 		newEmployee['id'] = crypto.randomBytes(10).toString('hex');
-		var index = storage.length();
-		storage.setItemSync(index.toString(),newEmployee);
-		return res.status(201).json(storage.getItemSync(index.toString()));
+		storage.setItemSync(id,newEmployee);
+		return res.status(201).json(storage.getItem(id));
 	};
 	createEmployee();
 };
@@ -28,8 +27,10 @@ exports.addEmployee = function(req,res){
 /* Get Employees */
 exports.getEmployee = function(req,res){
 	employees = [];
+	//storage.clearSync();
+	var keys = storage.keys();
 	for (var i=0; i< storage.length(); i++){
-		var employee = storage.getItemSync(i.toString());
+		var employee = storage.getItem(keys[i]);
 		if (employee !== undefined)
 		{
 		  employees[i] = employee;
@@ -38,15 +39,35 @@ exports.getEmployee = function(req,res){
 	return res.status(201).json(employees);
 };
 
+/* Get Init Employee */
+exports.getInitEmployee = function(req,res){
+	employees = [];
+	//storage.clearSync();
+	var keys = storage.keys();
+	var counts = 0;
+	for (var i=0; i< storage.length(); i++){
+		var employee = storage.getItem(keys[i]);
+		if (employee !== undefined)
+		{
+		  employees[i] = employee;
+		  counts++;
+		  if (counts >=10)
+		  	break;
+		}
+	}
+	return res.status(201).json(employees);
+};
+
 /* Updates selected Employee */
 exports.updateEmployee = function(req,res){
 	var updatedEmployee;
+	var keys = storage.keys();
 	for (var i=0; i< storage.length(); i++){
-		var employee = storage.getItemSync(i.toString());
+		var employee = storage.getItem(keys[i]);
 		if ((employee !== undefined) && (employee['id'] === req.body['id']))
 		{
-		  	storage.setItemSync(i.toString(),req.body);
-		  	updatedEmployee = storage.getItemSync(i.toString());
+		  	storage.setItemSync(keys[i],req.body);
+		  	updatedEmployee = storage.getItemSync(keys[i]);
 		  	break;
 		}
 	}
@@ -57,15 +78,15 @@ exports.updateEmployee = function(req,res){
 exports.deleteEmployee = function(req, res){
 	var updatedEmployee;
 	var selectedEmployeeId = req.params.id;
-	console.log("parameterid:   " + selectedEmployeeId);
+	var keys = storage.keys();
 	for (var i=0; i< storage.length(); i++){
-		var employee = storage.getItemSync(i.toString());
-		console.log("employeeid"+employee['id']);
-		if ((employee !== undefined) && (employee['id'] === selectedEmployeeId))
+		var employee = storage.getItem(keys[i]);
+		if ((employee !== undefined) && (employee !== null))
 		{
-			console.log("in delete: employee id: "+employee['id']);
-		  	storage.removeItemSync(i.toString());	  	
+			if (employee['id'] === selectedEmployeeId){
+		  	  storage.removeItemSync(keys[i]);
 		  	break;
+		  	}
 		}
 	}
 	return res.status(201).json(storage.values());

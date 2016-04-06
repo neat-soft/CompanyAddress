@@ -6,6 +6,7 @@ angular.module('CompanyApp')
     var selectedEmployee;
     var EA = {};
     var Employees = [];
+    var b_init_flag = false;
     EA.setEmployees = function(employees){
       var anEmployee;
       for (var employeeIndex = 0; employeeIndex<employees.length; employeeIndex++){
@@ -43,5 +44,13 @@ angular.module('CompanyApp')
     EA.getCurrentEmployee=function(){
       return selectedEmployee;
     };
+
+    EA.setInitFlag=function(value){
+      b_init_flag = value;
+    }
+    EA.getInitFlag=function(){
+      return b_init_flag;
+    };
+
     return EA;
   });

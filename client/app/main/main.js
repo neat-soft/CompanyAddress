@@ -2,9 +2,9 @@
 
 angular.module('CompanyApp')
   .config(function ($routeProvider) {
-    $routeProvider
+    /*$routeProvider
       .when('/', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      });
+        templateUrl: 'app/list/list.html',
+        controller: 'ListCtrl'
+      });*/
   });

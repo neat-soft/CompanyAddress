@@ -15,8 +15,10 @@ var myApp = angular.module('CompanyApp', [
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
-      .otherwise('/');
-
+      .otherwise({
+        redirectTo: '/list'
+      });
+      //.otherwise('/list');
     $locationProvider.html5Mode(true);
     //$httpProvider.useApplyAsync(true);
   });

@@ -5,7 +5,6 @@ angular.module('CompanyApp')
     console.log("In EditController");
     $scope.currentEmployee = {};
     $scope.currentEmployee = employeeHelper.getCurrentEmployee();
-        
     $scope.saveEmployee = function(employee){
 	  $http.post('/api/employee/updateEmployee',employee)
       .success(function(employeeFromServer){
