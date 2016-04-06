@@ -10,7 +10,6 @@
 - [Node.js and NPM](nodejs.org) >= v0.10.0
 - [Bower](bower.io) (`npm install --global bower`)
 - [Grunt](http://gruntjs.com/) (`npm install --global grunt-cli`)
-- [MongoDB](https://www.mongodb.org/) - Keep a running daemon with `mongod`
 
 ### Developing
 
