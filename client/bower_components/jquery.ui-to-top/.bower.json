@@ -1,0 +1,19 @@
+{
+  "name": "ui-to-top",
+  "homepage": "https://github.com/sksmatt/UItoTop-jQuery-Plugin",
+  "license": "GNU",
+  "main": [
+    "js/jquery.ui.totop.js",
+    "css/ui-totop.css",
+    "img/ui.totop.png"
+  ],
+  "_release": "14d6f09efb",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "14d6f09efb5cbeda0307ce778f0d7f48ff849779"
+  },
+  "_source": "https://github.com/sksmatt/UItoTop-jQuery-Plugin.git",
+  "_target": "*",
+  "_originalSource": "jquery.ui-to-top"
+}

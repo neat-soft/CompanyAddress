@@ -1,0 +1,7 @@
+
+
+db.items.ensureIndex({"tags.category":1,"tags.name":1});
+
+db.getCollection('items').createIndex({'mrket_hash_name':1});
+
+db.items.createIndex({market_hash_name:"text"});

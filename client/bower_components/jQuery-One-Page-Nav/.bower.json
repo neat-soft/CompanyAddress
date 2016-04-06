@@ -1,0 +1,25 @@
+{
+  "name": "jQuery-One-Page-Nav",
+  "version": "3.0.0",
+  "main": [
+    "jquery.nav.js"
+  ],
+  "ignore": [
+    "README.md",
+    "*.html",
+    "*.css"
+  ],
+  "dependencies": {
+    "jquery": "~1.8.0"
+  },
+  "homepage": "https://github.com/davist11/jQuery-One-Page-Nav",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "241f70d4c91cab28adcfa4a036d1b38fce724fb4"
+  },
+  "_source": "https://github.com/davist11/jQuery-One-Page-Nav.git",
+  "_target": "~3.0.0",
+  "_originalSource": "jQuery-One-Page-Nav"
+}

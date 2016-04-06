@@ -1,0 +1,193 @@
+ /* General */
+html{
+
+  background: url(../assets/images/pattern.jpg) top center repeat;
+  background-color:transparent;
+
+}
+
+body{
+  background:url(../assets/images/pattern.jpg) top center no-repeat;
+  background-color:transparent;
+  /*background-size: contain !important;*/
+}
+div.container.ng-scope{
+  color: #fff;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #428bca;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #999;
+}
+.navbar-inverse .navbar-nav > li > a.active {
+    color: #fff;
+    background-color: #428bca;
+}
+
+a.navbar-brand{
+  margin-bottom:0px !important;
+  padding:0px;
+  width: 100%;
+  background-color: #D90000;
+  color: white;
+}
+.button, button{
+  display:block;
+  border-radius:5px;
+  padding:10px 15px;
+  text-align:center;
+  color:white;
+  font-size:12px;
+  font-family:'Roboto', Arial;
+  font-weight: 400;
+  background-color: #00d2ff;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.75), inset 0 1px 2px rgba(255,255,255,.7);
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,.75), inset 0 1px 2px rgba(255,255,255,.7);
+  box-shadow: 0 0 5px rgba(0,0,0,.75), inset 0 1px 2px rgba(255,255,255,.7);
+  border: solid 1px #17a8e5;
+  background-image: -webkit-linear-gradient(bottom, #1165cc, #17a8e5);
+  background-image: -moz-linear-gradient(bottom, #1165cc, #17a8e5);
+  background-image: -o-linear-gradient(bottom, #1165cc, #17a8e5);
+  background-image: -ms-linear-gradient(bottom, #1165cc, #17a8e5);
+  background-image: linear-gradient(to top, #1165cc, #17a8e5);
+}
+.button:hover, button:hover{
+  color:#fff;
+  text-shadow:0px 0px 3px white;
+  -webkit-box-shadow: 0 0 5px #17a8e5, inset 0 1px 2px rgba(255,255,255,.7);
+  -moz-box-shadow: 0 0 5px #17a8e5, inset 0 1px 2px rgba(255,255,255,.7);
+  box-shadow: 0 0 5px #17a8e5, inset 0 1px 2px rgba(255,255,255,.7);
+
+}
+
+.col-sm-6 column {  
+   text-align:center;
+}
+.col-sm-6 column form {
+   display:inline-block;
+}
+/* Header */
+#company {
+    color: #17a8e5;
+    font-weight:1000;
+    font-size: 30px;
+    
+}
+#address{
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px
+
+}
+body .navbar{
+  margin-bottom:0px !important;
+}
+body .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+  padding:0px;
+}
+body .navbar-header .navbar-brand{
+  display:none;
+}
+
+.mainmenu{
+  min-height: 0px;
+  background:#15191d;
+  border-bottom: 1px solid #000000;
+}
+
+@media (min-width:991px) {
+  .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+  }
+  .navbar-collapse.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+  }
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse, .navbar-static-top .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+   margin-right: -10px;
+   margin-left: -10px;
+ }
+
+@media (max-width: 768px) {
+  .nav > li{
+    float: left;
+  }
+  .menu-main-container{
+    float:left;
+    margin-left:10px;
+  }
+body .navbar-brand{
+  display:none;
+}
+  body .navbar-header .navbar-brand{
+    height: 83px;
+    padding: 15px 15px;
+    float: left;
+    top: 0px;
+    position: relative;
+    margin-top: -18px;
+    display:block;
+  }
+  body .navbar-header .navbar-brand img{
+    height:100%;
+  }
+  body .search{
+    width: 100%;
+    background: white;
+    padding: 10px 0px 10px 0px;
+    margin-right: 0px;
+  }
+  body .categories-menu .navbar-nav li a{
+  text-align:center;
+  padding: 15px;
+  }
+  body  .categories-menu .navbar-nav li {
+    z-index: 10;
+    width: 100%;
+  }
+  body .navbar-collapse{
+    max-height:none;
+    overflow:visible !important;
+  }
+  body .navbar-toggle .icon-bar{
+    width:100%;
+  }
+  body .navbar-toggle b{
+    margin-bottom: 2px;
+    display: block;
+    margin-top: -2px;
+  }
+  body .navbar-toggle{
+    margin-top:0px;
+  }
+  body .dropdown-menu{
+    width:100%;
+    position:relative;
+  }
+  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+    background:transparent;
+  }
+  .user-extras a, .user-extras, .header-right .ng-scope{
+    width:100%;
+    margin-bottom:7px;
+  }
+  .header-right{
+    width:100%;
+    text-align:center;
+  }
+
+} 

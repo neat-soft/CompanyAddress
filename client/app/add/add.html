@@ -1,0 +1,44 @@
+<div ng_include='"components/navbar/navbar.html"'> </div>
+<div class="container ng-scope">
+  <div class="row">
+   <br>
+   <h2>Add Employees</h2>
+    <br>
+    <br>
+    <div class="col-sm-6 col-sm-offset-3 text-right">
+        <form style="width:100%" ng-model="newEmployee" name="addForm" ng-submit="addEmployee(newEmployee)" novalidate="true">
+          
+          <!-- First NAME -->
+          <div class="form-group" ng-class="{ 'has-error' : addForm.first_name.$invalid && !addForm.first_name.$pristine }">
+            <input placeholder="First Name" type="text" name="first_name" class="form-control" ng-model="newEmployee.first_name" ng-maxlength="150" required>
+            <p ng-show="addForm.first_name.$invalid && !addForm.first_name.$pristine" class="help-block">First Name is  required.</p>
+            <p ng-show="addForm.first_name.$error.maxlength" class="help-block">Last Name is  too long.</p>
+          </div>
+		 <!-- Last NAME -->
+          <div class="form-group" ng-class="{ 'has-error' : addForm.last_name.$invalid && !addForm.last_name.$pristine }">
+            <input placeholder="Last Name" type="text" name="last_name" class="form-control" ng-model="newEmployee.last_name" ng-maxlength="150"  required>
+            <p ng-show="addForm.last_name.$invalid && !addForm.last_name.$pristine" class="help-block">Last Name is  required.</p>
+            <p ng-show="addForm.last_name.$error.maxlength" class="help-block">Last Name is  too long.</p>
+          </div>
+		<!-- Mail -->
+          <div class="form-group" ng-class="{ 'has-error' : addForm.email.$invalid && !addForm.email.$pristine }">
+            <input placeholder="Email" type="email" name="email" ng-model="newEmployee.email" class="form-control" ng-maxlength="150" required>
+            <p ng-show="addForm.email.$invalid && !addForm.email.$pristine" class="help-block">Please input valid type of email address.</p>
+            <p ng-show="addForm.email.$error.maxlength" class="help-block">Email is  too long.</p>
+          </div>
+        <!-- Company-->
+          <div class="form-group" ng-class="{ 'has-error' : addForm.company.$invalid && !addForm.company.$pristine }">
+            <input placeholder="Company" type="text" name="company" ng-model="newEmployee.company" class="form-control" ng-maxlength="75" required>
+            <p ng-show="addForm.company.$invalid && !addForm.company.$pristine" class="help-block">Email is  required. </p>
+            <p ng-show="addForm.company.$error.maxlength" class="help-block">Company name is  too long.</p>
+          </div>
+
+          <div class="avenir-light">
+            <!--<button type="submit" class="btn btn-primary btn-lg shadowed">Add</button> -->
+            <button type="submit" class="btn btn-primary" ng-disabled="addForm.$invalid">Add</button>
+          </div>
+         </form>
+    </div>
+    </div>
+  </div>
+</div>

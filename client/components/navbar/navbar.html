@@ -1,0 +1,38 @@
+<nav ng-controller="NavbarCtrl" class="navbar navbar-inverse mainmenu">
+  <div class="container">
+	<div class="navbar-header">
+      <!--<a class="navbar-brand" ui-sref="main"><img src="/assets/images/logo.png" /></a>-->
+      <a href="/" ng-class="navbar-brand">
+        <span id ="company">Company</span>
+        <span id ="address">Address Book</span>
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+      	<b>MENU</b>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="categories-menu navbar-collapse collapse">
+    <div class="container">
+      <div class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+            <li class="menu-item dropdown">
+              <a href="/add" class="" ng-class='{active: isActive("add")}' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add Employee </a>
+            </li>
+            <!--<li class="menu-item dropdown">
+              <a href="/edit" class="" ng-class='{active: isActive("edit")}' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Edit Employee </a>
+            </li>
+            <li class="menu-item dropdown">
+              <a href="/view" class="" ng-class='{active: isActive("view")}' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Employee </a>
+            </li>-->
+            <li class="menu-item dropdown">
+              <a href="/list" class="" ng-class='{active: isActive("list")}' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">List of Employees </a>   
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</nav>
